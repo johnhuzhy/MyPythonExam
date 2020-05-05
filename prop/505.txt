@@ -1,0 +1,10 @@
+learn python
+<class '_io.TextIOWrapper'>
+['buffer', 'close', 'closed', 'detach', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 'line_buffering', 
+'mode', 'name', 'newlines', 'read', 'readable', 'readline', 'readlines', 'reconfigure', 'seek', 'seekable',
+'tell', 'truncate', 'writable', 'write', 'write_through', 'writelines']
+Life is short, you nedd python.
+Life is short, you nedd python.
+Life is short, you nedd python.
+Life is short, you nedd python.
+Life is short, you nedd python.
