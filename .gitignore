@@ -1,1 +1,4 @@
 /prop/*.txt
+/prop/*.xml
+/prop/*.json
+/log/*.log
