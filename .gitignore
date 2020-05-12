@@ -2,3 +2,4 @@
 /prop/*.xml
 /prop/*.json
 /log/*.log
+*.pyc
