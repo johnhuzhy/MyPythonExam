@@ -1,5 +1,7 @@
+__init__.py
+*.pyc
 /prop/*.txt
 /prop/*.xml
 /prop/*.json
 /log/*.log
-*.pyc
+

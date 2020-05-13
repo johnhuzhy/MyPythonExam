@@ -1,12 +1,14 @@
 import logging
+import datetime
 
 # loggerを新規する
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 # handleを新規し、ログ出力ため
-logfile = './log/test.log'
-fh = logging.FileHandler(logfile)
+today = datetime.date.today()
+logfile = './log/'+str(today)+'.log'
+fh = logging.FileHandler(logfile, encoding='utf-8')
 fh.setLevel(logging.DEBUG)
 
 # handleを新規し、コンソール出力ため
@@ -23,28 +25,3 @@ ch.setFormatter(formatter)
 # loggerはhandleに追加する
 logger.addHandler(fh)
 logger.addHandler(ch)
-
-
-def debug(msg):
-    """ logging.debug """
-    logger.debug(msg)
-
-
-def info(msg):
-    """ logging.info """
-    logger.info(msg)
-
-
-def warning(msg):
-    """ logging.warning """
-    logger.warning(msg)
-
-
-def error(msg):
-    """ logging.error """
-    logger.error(msg)
-
-
-def critical(msg):
-    """ logging.critical """
-    logger.critical(msg)
