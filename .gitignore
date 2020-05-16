@@ -3,5 +3,6 @@ __init__.py
 /prop/*.txt
 /prop/*.xml
 /prop/*.json
+/prop/*.png
 /log/*.log
 
