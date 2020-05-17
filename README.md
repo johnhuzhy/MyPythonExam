@@ -1,7 +1,9 @@
 # MyPythonExam
-For the Python Exam 2020
-April 28th, 2020
+Learn python for the Python Exam in 2020.
+Create by April 28th, 2020
+python version: Python 3.8.3
 
+#試験内容：
 ◆　基本データタイプ
     ①数値
     ②文字列
