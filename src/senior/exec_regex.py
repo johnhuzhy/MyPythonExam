@@ -144,6 +144,32 @@ def fun_f11():
     print(f12)
 
 
+def fun_f13():
+    """
+    re.match re.search
+    """
+    r1 = re.match('\d', str_all)
+    print(r1)
+    r2 = re.search('\d', str_all)
+    print(r2.group())
+    r3 = re.match('\d', str_qq)
+    print(r3.span())
+
+
+def fun_f14():
+    """
+    search group分組
+    """
+    str_f14 = "Life is short, I use python, I love python"
+    r = re.search('Life(.*)python(.*)python', str_f14)
+    print(r.group(0))
+    print(r.group(1))
+    print(r.group(2))
+    print(r.groups())
+    rf = re.findall('Life(.*)python', str_f14)
+    print(rf)
+
+
 if __name__ == "__main__":
     fun_c1()
     fun_c2()
@@ -154,3 +180,5 @@ if __name__ == "__main__":
     fun_c9()
     fun_c10()
     fun_f11()
+    fun_f13()
+    fun_f14()
