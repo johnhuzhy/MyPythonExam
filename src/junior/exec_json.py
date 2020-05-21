@@ -27,8 +27,8 @@ def fun10_15():
         sample = json.load(file)
     print(type(sample))
     for key in sample.keys():
-        if type(sample[key]) == list:
-            print(f"{key} is ↓↓↓LIST↓↓↓")
+        if isinstance(sample[key],(list,dict)):
+            print(f"{key} is ↓↓↓LIST/DICT↓↓↓")
             pprint.pprint(sample[key])
         else:
             print(f"{key} is {sample[key]}.")
