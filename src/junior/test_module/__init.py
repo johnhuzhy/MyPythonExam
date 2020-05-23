@@ -1,0 +1,1 @@
+print('test_moduleパッケージの__init__.pyである。')
