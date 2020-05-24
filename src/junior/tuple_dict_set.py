@@ -1,3 +1,4 @@
+from math import pi
 # list
 #'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
 hlst= ['2', 'x', 'github.co.jp']
@@ -55,3 +56,26 @@ print("aset.issuperset(cset):", aset.issuperset(cset))
 print("aset.union(bset):", aset.union(bset))
 print("aset.intersection(bset):", aset.intersection(bset))
 print("aset.difference(bset):", aset.difference(bset))
+
+print('#'*33)
+# リスト内包
+squares1 = list(map(lambda x: x**2, range(10)))
+print(squares1)
+squares2 = [x**2 for x in range(10)]
+print(squares2)
+combs1 = [(x, y) for x in [1, 2, 3] for y in [3, 1, 4] if x != y]
+print(combs1)
+combs2 = [(x, x**2, x**3) for x in range(9)]
+print(combs2)
+px = [str(round(pi, i)) for i in range(1, 9)]
+print(px)
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16],
+]
+matrix1 = [[row[i] for row in matrix] for i in range(4)]
+print(matrix1)
+matrix2 = list(zip(*matrix))
+print(matrix2)
