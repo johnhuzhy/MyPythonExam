@@ -39,6 +39,14 @@ if __name__ == "__main__":
     cheeseshop("Limburger", "It's very runny, sir.",
                "It's really very, very, VERY runny, sir.",
                shopkkeeper="Michael Palin", client="John Cleese", sketch="Cheese Shop Sketch")
+    funny = ("Are you kidding me?","God damn it, It's a joke.")
+    shopdict = dict(shopkkeeper="Arthas Menethil", client="Kel'Thuzad Naxxramas")
+    print('+'*33) 
+    cheeseshop("the high elves")
+    print('+'*33) 
+    cheeseshop("Ranger-General", *funny)
+    print('+'*33) 
+    cheeseshop("Banshee", **shopdict)
     print('#'*33)           
     c1 = concat("earth", "mars", "venus")
     print(c1)
