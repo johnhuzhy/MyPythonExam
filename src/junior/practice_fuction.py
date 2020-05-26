@@ -33,3 +33,13 @@ def fib(n):
 
 fm = fib(10)
 print(fm)
+
+
+def naming():
+    '''global name'''
+    global c
+    c = '33'
+
+
+naming()
+print(c)
