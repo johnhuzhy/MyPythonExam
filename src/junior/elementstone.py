@@ -1,6 +1,8 @@
 # coding:utf-8
 from random import random
 from util import log
+logpy = log.logger
+
 """
 Level 1 Elements Stone
 """
@@ -35,6 +37,8 @@ def create_l1ES(num=1):
     """Create Level 1 Elements Stone"""
     gold = float(num * l1_value)
     diam = float(num * l1_value_diamond)
+    global l1_cnt
+    l1_cnt += num
     return (gold, diam)
 
 
@@ -43,12 +47,14 @@ def create_l3ES(num=1):
     gold, diam = create_l1ES(num * (l1_to_l3 + 1))
     gold += float(num * l1_to_l3_value)
     steg = float(num * l1_to_l3_strength)
+    global l3_cnt
+    l3_cnt += num
     return (gold, diam, steg)
 
 
 def create_l4ES(num=1):
     """Create Level 4 Elements Stone"""
-    created = 0
+    attempted,created,failed = 0,0,0
     gold, diam, steg = 0, 0, 0
     while created < num:
         gold_l3, diam_l3, steg_l3 = create_l3ES()
@@ -56,6 +62,7 @@ def create_l4ES(num=1):
         gold += gold_l3 + gold_l1 + l3_to_l4_value
         diam += diam_l3 + diam_l1
         steg += steg_l3
+        attempted += 1
         success = random()
         if success >= l3_to_l4_rate:
             # Success
@@ -63,7 +70,10 @@ def create_l4ES(num=1):
             steg += l3_to_l4_strength
         else:
             # Fail
-            pass
+            failed += 1
+    logpy.debug(f"{attempted}回を試して、{created}回成功、{failed}回失敗。")
+    global l4_cnt
+    l4_cnt += num
     return (gold, diam, steg)
 
 
@@ -83,12 +93,18 @@ level6 ES ~~ 750 Gold
 l6ES_worth = 750
 if __name__ == "__main__":
     l6_num = 10
+    """
+    the count of lv ES
+    """
+    l1_cnt, l3_cnt, l4_cnt = 0,0,0
     # 低次石を使えて生成する
     gold, diam, steg = create_l6ES(l6_num)
     complicated = gold + diam * 0.75 + steg
     # 直接に黄金を使える
     gold_cost = l6ES_worth * l6_num
+    logpy.info(f"今回合計： ★:{l6_num}  ◆:{l4_cnt}  ▼:{l3_cnt}  ●:{l1_cnt}")
+    logpy.info(f"L6石（{l6_num}）⇒生成費用：{complicated} VS 購入費用：{gold_cost}")
     if complicated > gold_cost:
-        print('直接に黄金を使えれば、効果は高い')
+        logpy.info('直接に黄金を使えれば、効果は高い')
     else:
-        print('低次石を使えて生成すれば、効果は高い')
+        logpy.info('低次石を使えて生成すれば、効果は高い')
