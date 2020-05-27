@@ -1,6 +1,9 @@
 # coding=utf-8
 from abc import ABCMeta, abstractmethod
 from random import randint, randrange
+from util import log
+logpy = log.logger
+
 """
 ウルトラマンとモンスター
 """
@@ -77,7 +80,7 @@ class Ultraman(Fighter):
     def fatal_blow(self, other):
         injury = randint(40, 60)
         other.hp -= injury
-        print(f'◆◆◆ {self._name}奥特曼は致命的な打撃を与える({injury}) ◆◆◆')
+        logpy.debug(f'◆◆◆ {self._name}奥特曼は致命的な打撃を与える({injury}) ◆◆◆')
 
     def huge_attack(self, other):
         """
@@ -111,13 +114,13 @@ class Ultraman(Fighter):
             return False
 
     def resume(self):
-        """恢複魔法值"""
+        """恢複魔法値"""
         incr_mp = randint(3, 10)
         self._mp += incr_mp
         return incr_mp
 
     def __str__(self):
-        return f'~~~{self._name}奥特曼~~~\n  生命值: {self._hp}\n  魔法值: {self._mp}'
+        return f'~~~{self._name}奥特曼~~~\t  生命値: {self._hp}\t  魔法値: {self._mp}'
 
 
 class Monster(Fighter):
@@ -133,15 +136,15 @@ class Monster(Fighter):
             injury = randint(10, 20) + int(blood * 1.8)
             self._hp -= blood
             other.hp -= injury
-            print(f'◇◇◇　{self._name}小怪獸は血撃を与える({blood}↢↣{injury})　◇◇◇')
+            logpy.debug(f'◇◇◇　{self._name}小怪獸は血撃を与える({blood}↢↣{injury})　◇◇◇')
         else:
             self.normal_attack(other)
 
     def __str__(self):
         if self.alive:
-            return f'~~~{self._name}小怪獸~~~\n  生命值: {self._hp}\n'
+            return f'~~~{self._name}小怪獸~~~\t  生命値: {self._hp}'
         else:
-            return f'~~~{self._name}は殺された~~~\n'
+            return f'~~~{self._name}は殺された~~~'
 
 
 def is_any_alive(monsters):
@@ -164,9 +167,9 @@ def select_one_alive(monsters):
 
 
 def display_info(ultraman, monsters):
-    print(ultraman)
+    logpy.info(ultraman)
     for monster in monsters:
-        print(monster, end='')
+        logpy.info(monster)
 
 
 if __name__ == "__main__":
@@ -177,35 +180,35 @@ if __name__ == "__main__":
     ms = [m1, m2, m3]
     fight_round = 1
     while u.alive and is_any_alive(ms):
-        print('#'*15, f"第{fight_round:02}回合", '#'*15)
+        logpy.info('#'*15 + f"第{fight_round:02}回合" + '#'*15)
         m = select_one_alive(ms)
         skill = randint(1, 10)
         if skill <= 6:  # 60%的概率使用普通攻撃
-            print(f'{u.name}使用普通攻撃打了{m.name}.')
+            logpy.debug(f'{u.name}使用普通攻撃打了{m.name}.')
             u.attack(m)
-            print(f'{u.name}的魔法值回復了{u.resume()}点.')
-        elif skill <= 9:  # 30%的概率使用魔法攻撃(可能因魔法值不足而失败)
+            logpy.debug(f'{u.name}的魔法値回復了{u.resume()}点.')
+        elif skill <= 9:  # 30%的概率使用魔法攻撃(可能因魔法値不足而失敗)
             if u.magic_attack(ms):
-                print(f'{u.name}使用了魔法攻撃.')
+                logpy.debug(f'{u.name}使用了魔法攻撃.')
             else:
-                print(f'{u.name}使用魔法失败.')
-                print(f'{u.name}使用普通攻撃打了{m.name}.')
+                logpy.debug(f'{u.name}使用魔法失敗.')
+                logpy.debug(f'{u.name}使用普通攻撃打了{m.name}.')
                 u.attack(m)
-        else:  # 10%的概率使用究極必殺技(如果魔法值不足则使用普通攻撃)
+        else:  # 10%的概率使用究極必殺技(如果魔法値不足则使用普通攻撃)
             if u.huge_attack(m):
-                print(f'{u.name}使用§究極必殺技§虐了{m.name}.')
+                logpy.debug(f'{u.name}使用§究極必殺技§虐了{m.name}.')
             else:
-                print(f'{u.name}使用普通攻撃打了{m.name}.')
-                print(f'{u.name}的魔法值回復了{u.resume()}点.')
-        if is_any_alive(ms):  # 如果小怪獸没有死就回击奥特曼
+                logpy.debug(f'{u.name}使用普通攻撃打了{m.name}.')
+                logpy.debug(f'{u.name}的魔法値回復了{u.resume()}点.')
+        if is_any_alive(ms):  # 如果小怪獸没有死就反撃奥特曼
             for mst in ms:
                 if mst.alive:
-                    print(f'{mst.name}回击了{u.name}.')
+                    logpy.debug(f'{mst.name}反撃了{u.name}.')
                     mst.attack(u)
         display_info(u, ms)  # 每个回合结束后显示奥特曼和小怪獸的信息
         fight_round += 1
-    print("="*15, "战斗结束!", "="*15)
+    logpy.info("="*15 + "戦いが終わる!" + "="*15)
     if u.alive:
-        print(f'{u.name}奥特曼勝利!')
+        logpy.info(f'{u.name}奥特曼勝利!')
     else:
-        print('小怪獸勝利!')
+        logpy.info('小怪獸勝利!')

@@ -64,14 +64,14 @@ def create_l4ES(num=1):
         steg += steg_l3
         attempted += 1
         success = random()
-        if success >= l3_to_l4_rate:
+        if success < l3_to_l4_rate:
             # Success
             created += 1
             steg += l3_to_l4_strength
         else:
             # Fail
             failed += 1
-    logpy.debug(f"{attempted}回を試して、{created}回成功、{failed}回失敗。")
+    logpy.debug(f"{attempted}回を試して、{created}回成功、{failed}回失敗、成功率：{created/attempted:.2%}。")
     global l4_cnt
     l4_cnt += num
     return (gold, diam, steg)
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     # 直接に黄金を使える
     gold_cost = l6ES_worth * l6_num
     logpy.info(f"今回合計： ★:{l6_num}  ◆:{l4_cnt}  ▼:{l3_cnt}  ●:{l1_cnt}")
-    logpy.info(f"L6石（{l6_num}）⇒生成費用：{complicated} VS 購入費用：{gold_cost}")
+    logpy.info(f"L6石（{l6_num}）⇒ 生成費用：{complicated:.3f} VS 購入費用：{gold_cost}")
     if complicated > gold_cost:
         logpy.info('直接に黄金を使えれば、効果は高い')
     else:
