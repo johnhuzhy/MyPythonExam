@@ -1,6 +1,88 @@
-{% extends "layout.html" %}
-{% block content %}
-<h1>
-This is top html.
-</h1>
+{% extends "layout.html" %} {% block content %}
+<header>
+  <div class="container">
+    <a href="#"><img src="/static/images/HuLogo.jpg" /></a>
+    <nav>
+      <a class="toppage active" href="top">トップページ</a>
+      <a class="todo" href="#">TODOリスト</a>
+      <a class="info" href="#">個人情報更新</a>
+    </nav>
+  </div>
+</header>
+<section class="banner">
+  <ul>
+    <li class="active"><img src="/static/images/Full.png" /></li>
+    <li class="left"><img src="/static/images/Print.png" /></li>
+    <li class="right"><img src="/static/images/Print.png" /></li>
+  </ul>
+</section>
+<section class="main">
+  <aside>
+    <h1>Philosopher<samp>哲学者</samp></h1>
+    <dl>
+      <dt>Socrates</dt>
+      <dd>
+        An enigmatic figure, he made no writings, and is known chiefly through
+        the accounts of classical writers writing after his lifetime.
+      </dd>
+    </dl>
+    <dl>
+      <dt>Plato</dt>
+      <dd>
+        Founder of the Platonist school of thought, and the Academy, the first
+        institution of higher learning in the Western world.
+      </dd>
+    </dl>
+    <dl>
+      <dt>Aristotelēs</dt>
+      <dd>
+        Taught by Plato, he was the founder of the Lyceum, the Peripatetic
+        school of philosophy, and the Aristotelian tradition.
+      </dd>
+    </dl>
+  </aside>
+  <article>
+    <h1>
+      The Gettysburg Address<samp>ゲティスバーグ演説</samp>
+    </h1>
+    <h3>
+      --Abraham Lincoln
+    </h3>
+    <p>
+      Four score and seven years ago our fathers brought forth on this
+      continent, a new nation, conceived in Liberty, and dedicated to the
+      proposition that all men are created equal.
+    </p>
+    <p>
+      Now we are engaged in a great civil war, testing whether that nation, or
+      any nation so conceived and so dedicated, can long endure. We are met on a
+      great battle-field of that war. We have come to dedicate a portion of that
+      field, as a final resting place for those who here gave their lives that
+      that nation might live. It is altogether fitting and proper that we should
+      do this.
+    </p>
+    <p>
+      But, in a larger sense, we can not dedicate—we can not consecrate—we can
+      not hallow—this ground. The brave men, living and dead, who struggled
+      here, have consecrated it, far above our poor power to add or detract. The
+      world will little note, nor long remember what we say here, but it can
+      never forget what they did here.
+    </p>
+    <p>
+      It is for us the living, rather, to be dedicated here to the unfinished
+      work which they who fought here have thus far so nobly advanced. It is
+      rather for us to be here dedicated to the great task remaining before
+      us—that from these honored dead we take increased devotion to that cause
+      for which they gave the last full measure of devotion—that we here highly
+      resolve that these dead shall not have died in vain—that this nation,
+      under God, shall have a new birth of freedom—and that government of the
+      people, by the people, for the people, shall not perish from the earth.
+    </p>
+  </article>
+</section>
+<footer>
+  <div class="container">
+    <p>Copyright@JohnHuzhy.com</p>
+  </div>
+</footer>
 {% endblock %}

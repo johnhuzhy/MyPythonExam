@@ -1,1 +1,124 @@
-body {background: #B2DFDB}
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+header {
+  background: black;
+  height: 100px;
+}
+header > .container {
+  width: 1200px;
+  margin: 0 auto;
+}
+header > .container > a {
+  display: block;
+  float: left;
+  margin: 5px 5px;
+}
+header > .container > a > img {
+  width: 110px;
+  height: 90px;
+}
+header > .container > nav {
+  float: right;
+}
+header > .container > nav > a {
+  font-size: 24px;
+  line-height: 93px;
+  width: 210px;
+  height: 93px;
+  display: block;
+  float: left;
+  text-align: center;
+  color: white;
+}
+header > .container > nav > a.toppage {
+  background-color: darkviolet;
+}
+header > .container > nav > a.todo {
+  background-color: orange;
+}
+header > .container > nav > a.info {
+  background-color: yellowgreen;
+}
+header > .container > nav > a:hover,
+header > .container > nav > a.active {
+  padding-bottom: 7px;
+}
+
+.banner {
+  background-color: ghostwhite;
+}
+.banner > ul {
+  position: relative;
+  width: 1480px;
+  height: 580px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+.banner > ul > li {
+  position: absolute;
+  width: 458px;
+  height: 400px;
+  overflow: hidden;
+}
+.banner > ul > li > img {
+  position: absolute;
+  height: 100%;
+}
+.banner > ul > li.active {
+  z-index: 2;
+  top: 38px;
+  right: 0;
+  left: 0;
+  width: 693px;
+  height: 520px;
+  margin: auto;
+  border: 1px solid blanchedalmond;
+}
+.banner > ul > li.left {
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.banner > ul > li.right {
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.main {
+  height: 363px;
+  width: 1200px;
+  margin: 37px auto 0;
+}
+.main > aside {
+  float: left;
+  width: 450px;
+}
+.main > article{
+  float: right;
+  width: 720px;
+}
+
+footer {
+  height: 50px;
+  background: aqua;
+  line-height: 50px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
