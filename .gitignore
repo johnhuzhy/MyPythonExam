@@ -1,8 +1,10 @@
 __init__.py
 *.pyc
+*.jpg
+*.png
+*.tif
 /prop/*.txt
 /prop/*.xml
 /prop/*.json
-/prop/*.png
 /log/*.log
 

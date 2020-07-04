@@ -1,3 +1,4 @@
+/* all */
 * {
   margin: 0px;
   padding: 0px;
@@ -11,6 +12,8 @@ a {
 ul {
   list-style: none;
 }
+
+/* header */
 header {
   background: black;
   height: 100px;
@@ -55,6 +58,7 @@ header > .container > nav > a.active {
   padding-bottom: 7px;
 }
 
+/* banner */
 .banner {
   background-color: ghostwhite;
 }
@@ -100,25 +104,66 @@ header > .container > nav > a.active {
   margin: auto;
 }
 
+/* main */
 .main {
   height: 363px;
   width: 1200px;
   margin: 37px auto 0;
 }
+.main h1 {
+  font-size: 35px;
+  font-weight: lighter;
+  margin-bottom: 23px;
+}
+.main h1 > samp {
+  font-size: 25px;
+  color: #7c7c7c;
+}
 .main > aside {
   float: left;
-  width: 450px;
+  width: 400px;
 }
-.main > article{
+.main > aside > dl {
+  position: relative;
+  display: block;
+  height: 74px;
+  margin-bottom: 17px;
+}
+.main > aside > dl > dt {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  text-decoration: underline;
+}
+.main > aside > dl > dd {
+  font-size: 16px;
+  font-weight: lighter;
+}
+.main > article {
   float: right;
-  width: 720px;
+  width: 770px;
+}
+.main > article > h3 {
+  font-size: 20px;
+  text-align: end;
+  margin-bottom: 7px;
+}
+.main > article > p {
+  margin-bottom: 7px;
 }
 
+/* footer */
 footer {
-  height: 50px;
-  background: aqua;
-  line-height: 50px;
+  background: black;
+}
+footer > .container {
+  width: 1200px;
+  height: 64px;
+  margin: 0 auto;
+}
+footer > .container > p {
+  line-height: 64px;
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 16px;
+  color: white;
 }
