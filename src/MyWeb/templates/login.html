@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='login.css')}}" />
+<section class="main">
+  <h1>TODOリスト　ログイン</h1>
+  <dl>
+    <dt><p>ユーザ名</p></dt>
+    <dd><input type="text" name="user" placeholder="ユーザ" form="login"/></dd>
+  </dl>
+  <dl>
+    <dt><p>パスワード</p></dt>
+    <dd><input type="password" name="password" placeholder="パスワード" form="login"/></dd>
+  </dl>
+  <form name="login" action="/login" method="post" id="login">
+    <p><input type="submit" class="btn" value="ログイン" /></p>
+  </form>
+  <hr>
+</section>
+{% endblock %}

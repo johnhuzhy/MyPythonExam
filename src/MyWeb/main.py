@@ -1,21 +1,28 @@
 from flask import Flask
 from flask import render_template
+from flask import request
 
 app = Flask(__name__)
 
-
+#ログイン画面
 @app.route('/')
-def hello():
-    return 'Hello Shanshan!'
+@app.route('/home')
+def home():
+    return render_template("login.html", title='Login')
 
-
-def top_page():
-    return render_template("top.html", title='Top')
-
+@app.route('/login', methods=['get','post'])
+def login():
+    if request.method == 'POST':
+        print(request.form['user'])
+        return render_template("top.html")
+    else:
+        return render_template("login.html", title='Login')
 
 # トップ画面
-app.add_url_rule('/top', view_func=top_page)
-
+# app.add_url_rule('/top', view_func=top_page)
+@app.route('/top')
+def top_page():
+    return render_template("top.html")
 
 @app.route('/<name>', methods=['get'])
 def name_page(name):

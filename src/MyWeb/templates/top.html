@@ -1,14 +1,5 @@
 {% extends "layout.html" %} {% block content %}
-<header>
-  <div class="container">
-    <a href="#"><img src="/static/images/HuLogo.jpg" /></a>
-    <nav>
-      <a class="toppage active" href="top">トップページ</a>
-      <a class="todo" href="#">TODOリスト</a>
-      <a class="info" href="#">個人情報更新</a>
-    </nav>
-  </div>
-</header>
+<link rel="stylesheet" href="{{url_for('static', filename='top.css')}}" />
 <section class="banner">
   <ul>
     <li class="active"><img src="/static/images/Full.png" /></li>
@@ -78,9 +69,4 @@
     </p>
   </article>
 </section>
-<footer>
-  <div class="container">
-    <p>Copyright @ 2020 JohnHuzhy.com</p>
-  </div>
-</footer>
 {% endblock %}

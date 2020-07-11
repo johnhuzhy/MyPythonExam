@@ -1,16 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="/static/todo.css">
-    <script src="/static/todo.js"></script>
-</head>
-<body>
-{% block content %}
-<!-- ここにメインコンテンツを書く -->
-{% endblock %}
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% if title %}
+    <title>Huzhy - {{ title }}</title>
+    {% else %}
+    <title>Huzhy's TodoList</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+    <script src="/static/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#"><img src="/static/images/HuLogo.jpg" /></a>
+        <nav>
+          <a class="toppage active" href="top">トップページ</a>
+          <a class="todo" href="#">TODOリスト</a>
+          <a class="info" href="#">個人情報更新</a>
+        </nav>
+      </div>
+    </header>
+    {% block content %}
+    <!-- ここにメインコンテンツを書く -->
+    {% endblock %}
+    <footer>
+      <div class="container">
+        <p>Copyright @ 2020 JohnHuzhy.com</p>
+      </div>
+    </footer>
+  </body>
 </html>
