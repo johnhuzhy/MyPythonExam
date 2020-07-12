@@ -1,1 +1,16 @@
-DEBUG=True
+# APP配置
+SERVER_HOST = 'localhost'
+SERVER_PORT = 2345
+DEBUG = True
+
+# DB配置
+DIALECT = 'mysql'
+DRIVER = 'pymysql'
+USERNAME = 'test'
+PASSWORD = 'zaq12wsx'
+DB_HOST = 'localhost'
+DB_PORT = '3306'
+DATABASE = 'huzhy'
+
+SQLALCHEMY_DATABASE_URI = f"{DIALECT}+{DRIVER}://{USERNAME}:{PASSWORD}@{DB_HOST}:{DB_PORT}/{DATABASE}?charset=utf8"
+SQLALCHEMY_TRACK_MODIFICATIONS = False

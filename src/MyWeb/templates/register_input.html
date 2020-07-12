@@ -1,0 +1,32 @@
+{% extends "layout.html" %} {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='register.css')}}" />
+<section class="main">
+  <h1>TODOリスト　新規会員登録</h1>
+  <dl>
+    <dt><p>ユーザ名</p></dt>
+    <dd><input type="text" name="user" placeholder="ユーザ名" form="register"/></dd>
+  </dl>
+  <dl>
+    <dt><p>パスワード</p></dt>
+    <dd><input type="password" name="password" placeholder="パスワード" form="register"/></dd>
+  </dl>
+  <dl>
+    <dt><p>生年月日</p></dt>
+    <dd><input type="date" name="birthday" form="register"/></dd>
+  </dl>
+  <dl>
+    <dt><p>携帯電話</p></dt>
+    <dd><input type="tel" name="telephone" placeholder="電話番号" form="register"/></dd>
+  </dl>
+  <dl>
+    <dt><p>メールアドレス</p></dt>
+    <dd><input type="email" name="email" placeholder="メールアドレス" form="register"/></dd>
+  </dl>
+  <form name="register" action="/register" method="post" id="register">
+    <p><input type="submit" class="btn" value="会員登録" /></p>
+  </form>
+  <form name="register_back" action="/register_back" method="post" id="register_back">
+    <p><input type="submit" class="btn" value="戻　る" /></p>
+  </form>
+</section>
+{% endblock %}

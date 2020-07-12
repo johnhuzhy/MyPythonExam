@@ -4,7 +4,7 @@
   <h1>TODOリスト　ログイン</h1>
   <dl>
     <dt><p>ユーザ名</p></dt>
-    <dd><input type="text" name="user" placeholder="ユーザ" form="login"/></dd>
+    <dd><input type="text" name="user" placeholder="ユーザ名" form="login"/></dd>
   </dl>
   <dl>
     <dt><p>パスワード</p></dt>
@@ -13,6 +13,8 @@
   <form name="login" action="/login" method="post" id="login">
     <p><input type="submit" class="btn" value="ログイン" /></p>
   </form>
-  <hr>
+  <form name="register_input" action="/register_input" method="post" id="register_input">
+    <p><input type="submit" class="btn" value="新規会員登録"" /></p>
+  </form>
 </section>
 {% endblock %}

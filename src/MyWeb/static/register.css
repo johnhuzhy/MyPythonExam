@@ -11,13 +11,13 @@
   color: blue;
   text-align: center;
   font-weight: bolder;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 .main > dl {
   position: relative;
   display: block;
-  height: 100px;
-  margin-bottom: 30px;
+  height: 80px;
+  margin-bottom: 10px;
 }
 .main > dl > dt {
   display: block;
@@ -29,11 +29,11 @@
 .main > dl > dt > p {
   display: inline-block;
   position: absolute;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   padding: 5px;
   top: 30px;
-  left: 250px;
+  left: 200px;
 }
 .main > dl > dd {
   display: block;
@@ -48,7 +48,7 @@
   padding: 10px 15px;
   top: 20px;
   left: 60px;
-  font-size: 30px;
+  font-size: 25px;
   border-radius: 3px;
   border: 2px solid brown;
 }
