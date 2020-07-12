@@ -32,7 +32,7 @@
   font-size: 25px;
   font-weight: bold;
   padding: 5px;
-  top: 30px;
+  top: 20px;
   left: 200px;
 }
 .main > dl > dd {
@@ -46,7 +46,7 @@
   position: absolute;
   width: 370px;
   padding: 10px 15px;
-  top: 20px;
+  top: 10px;
   left: 60px;
   font-size: 25px;
   border-radius: 3px;
@@ -56,12 +56,23 @@
   box-shadow: 0 0 5px cadetblue;
   border: 3px solid red !important;
 }
-
-.main > form > p {
-  margin-top: 50px;
+.div2btn {
+  position: absolute;
+  width: 1200px;
   height: 100px;
 }
-.main .btn {
+.div2btn > aside:first-child {
+  float: left;
+  width: 600px;
+  height: 100%;
+}
+.div2btn > aside:last-child {
+  float: right;
+  width: 600px;
+  height: 100%;
+}
+
+.btn {
   display: block;
   width: 280px;
   border-radius: 4px;
@@ -71,10 +82,10 @@
   text-align: center;
   font-weight: bold;
   padding: 10px 30px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
-.main .btn:hover {
+.btn:hover {
   color: whitesmoke;
   background-color: olivedrab;
 }

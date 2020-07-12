@@ -23,10 +23,14 @@
     <dd><input type="email" name="email" placeholder="メールアドレス" form="register"/></dd>
   </dl>
   <form name="register" action="/register" method="post" id="register">
-    <p><input type="submit" class="btn" value="会員登録" /></p>
-  </form>
-  <form name="register_back" action="/register_back" method="post" id="register_back">
-    <p><input type="submit" class="btn" value="戻　る" /></p>
+    <div class="div2btn">
+      <aside>
+        <input type="submit" class="btn" name="Back" value="戻　る" />
+      </aside>
+      <aside>
+        <input type="submit" class="btn" name="Exec" value="会員登録" />
+      </aside>
+    </div>
   </form>
 </section>
 {% endblock %}
