@@ -6,4 +6,5 @@
 /prop/*.xml
 /prop/*.json
 /log/*.log
-
+/src/DjangoWeb/templates/admin/
+/src/DjangoWeb/templates/registration/

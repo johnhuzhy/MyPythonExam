@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Blog Article{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/blog.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<section class="main">
+    <hgroup>
+        <h1>{{ article.title }}</h1>
+        <h2>{{ article.author.username }}</h2>
+        <h3>{{ publish }}</h3>
+    </hgroup>
+    <article>
+        <p>{{ article.body }}</p>
+    </article>
+</section>
+{% endblock %}

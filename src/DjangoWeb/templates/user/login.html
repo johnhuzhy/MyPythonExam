@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<section class="main">
+    <h1>User Login</h1>
+    <p>ユーザ名とパスワードを入力してください：</p>
+    <form action="." method="post">{% csrf_token %}
+        <!-- {{ form.as_p }} -->
+        <div class="">
+            <label for="{{ form.username.id_for_label}}">ユーザ名：</label>
+            <div class="input-text">{{form.username}}</div>
+        </div>
+        <div class="">
+            <label for="{{ form.password.id_for_label}}">パスワード：</label>
+            <div class="input-text">{{form.password}}</div>
+        </div>
+        <input type="submit" class="btn" value="ログイン">
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Blog Titles{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/blog.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<section class="main">
+    <h1>わたしのブログだよ～</h1>
+    <ul>
+        {% for blog in blogs %}
+        <li>
+            <a href="{{ blog.id }}">
+                {{ blog.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
