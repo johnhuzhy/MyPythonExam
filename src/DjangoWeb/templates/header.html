@@ -5,8 +5,12 @@
     <nav>
       <a href="{% url 'blog_title' %}">ブログ</a>
       <a href="#"></a>
-      <a href="{% url 'user_login' %}">ログイン</a>
       <a href="#"></a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'user_logout' %}">ログアウト</a>
+      {% else %}
+      <a href="{% url 'user_login' %}">ログイン</a>
+      {% endif %}
     </nav>
   </div>
 </header>
