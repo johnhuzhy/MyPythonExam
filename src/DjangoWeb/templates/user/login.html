@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Login{% endblock %}
+{% block title %}ログイン{% endblock %}
 
 {% block style %}
 <link rel="stylesheet" href="{% static '/css/user.css' %}"/>
@@ -10,17 +10,17 @@
 {% block content %}
 <section class="main">
     <h1>User Login</h1>
-    <p>ユーザ名とパスワードを入力してください：</p>
-    <form action="." method="post">{% csrf_token %}
+    <h3>ユーザ名とパスワードを入力してください：</h3>
+    <form action="{% url 'user_login' %}" method="post">{% csrf_token %}
         <!-- {{ form.as_p }} -->
-        <div class="">
-            <label for="{{ form.username.id_for_label}}">ユーザ名：</label>
-            <div class="input-text">{{form.username}}</div>
-        </div>
-        <div class="">
-            <label for="{{ form.password.id_for_label}}">パスワード：</label>
-            <div class="input-text">{{form.password}}</div>
-        </div>
+        <dl>
+            <dt><label for="{{ form.username.id_for_label}}">ユーザ名：</label></dt>
+            <dd><div class="input-text">{{form.username}}</div></dd>
+        </dl>
+        <dl>
+            <dt><label for="{{ form.password.id_for_label}}">パスワード：</label></dt>
+            <dd><div class="input-text">{{form.password}}</div></dd>
+        </dl>
         <input type="submit" class="btn" value="ログイン">
     </form>
 </section>

@@ -1,0 +1,44 @@
+.main h3 {
+  font-size: 25px;
+}
+
+.main h3::before {
+  content: "";
+  margin-left: 110px;
+}
+
+.main dl {
+  position: relative;
+  display: block;
+  height: 74px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.main dl > dt {
+  display: block;
+  position: absolute;
+  float: left;
+  width: 443px;
+  height: 100%;
+}
+.main dl > dt > label {
+  display: inline-block;
+  position: absolute;
+  font-size: 25px;
+  font-weight: solid;
+  top: 20px;
+  left: 250px;
+}
+.main dl > dd {
+  display: block;
+  position: relative;
+  float: right;
+  width: 756px;
+  height: 100%;
+}
+.main dl > dd > div {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
