@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
+from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 from .forms import LoginForm, RegistrationForm, UserProfileForm
 
 
@@ -37,12 +40,12 @@ def user_register(request):
     if request.method == 'POST':
         user_form = RegistrationForm(request.POST)
         userprofile_form = UserProfileForm(request.POST)
-        if user_form.is_valid():
+        if user_form.is_valid() and userprofile_form.is_valid():
             new_user = user_form.save(commit=False)
             new_user.set_password(user_form.cleaned_data['password'])
-            new_user.save()
             new_profile = userprofile_form.save(commit=False)
             new_profile.user = new_user
+            new_user.save()
             new_profile.save()
             return HttpResponseRedirect('/user/register_result/')
         else:
@@ -57,3 +60,19 @@ def user_register_result(request):
     """サインアップ結果"""
     if request.method == 'GET':
         return render(request, 'user/register_result.html')
+
+
+class PasswordChange(LoginRequiredMixin, PasswordChangeView):
+    """パスワード変更ビュー"""
+    success_url = reverse_lazy('password_change_done')
+    template_name = 'user/password_change.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form_name'] = 'password_change'
+        return context
+
+
+class PasswordChangeDone(LoginRequiredMixin, PasswordChangeDoneView):
+    """パスワード変更完了"""
+    template_name = 'user/password_change_done.html'

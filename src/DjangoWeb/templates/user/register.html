@@ -13,30 +13,19 @@
     <h3>ユーザがある時は、<a href="{% url 'user_login' %}">ここ</a>をクリックしてください。</h3>
     <h3>新規ユーザは以下の情報を入力してください：</h3>
     <form action="{% url 'user_register' %}" method="post">{% csrf_token %}
+        {{ form.non_field_errors }}{{ profile..non_field_errors }}
+        {% for field in form %}
         <dl>
-            <dt><label for="{{ form.username.id_for_label}}">ユーザ名：</label></dt>
-            <dd><div class="input-text">{{form.username}}</div></dd>
+            <dt>{{ field.label_tag }}</dt>
+            <dd><div>{{ field }}</div>{{ field.errors }}</dd>
         </dl>
+        {% endfor %}
+        {% for field in profile %}
         <dl>
-            <dt><label for="{{ form.password.id_for_label}}">パスワード：</label></dt>
-            <dd><div class="input-text">{{form.password}}</div></dd>
+            <dt>{{ field.label_tag }}</dt>
+            <dd><div>{{ field }}</div>{{ field.errors }}</dd>
         </dl>
-        <dl>
-            <dt><label for="{{ form.password.id_for_label}}">パスワード確認：</label></dt>
-            <dd><div class="input-text">{{form.password2}}</div></dd>
-        </dl>
-        <dl>
-            <dt><label for="{{ form.useremail.id_for_label}}">メールアドレス：</label></dt>
-            <dd><div class="input-text">{{form.email}}</div></dd>
-        </dl>
-        <dl>
-            <dt><label for="{{ profile.birth.id_for_label}}">生年月日：</label></dt>
-            <dd><div class="input-text">{{profile.birth}}</div></dd>
-        </dl>
-        <dl>
-            <dt><label for="{{ profile.phone.id_for_label}}">携帯電話番号：</label></dt>
-            <dd><div class="input-text">{{profile.phone}}</div></dd>
-        </dl>
+        {% endfor %}
         <input type="submit" class="btn" value="サインアップ">
     </form>
 </section>

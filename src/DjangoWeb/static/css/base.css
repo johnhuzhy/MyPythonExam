@@ -73,7 +73,7 @@ header > .container > nav > a.active {
   margin-bottom: 23px;
   text-align: center;
 }
-.main .input-text {
+.main input {
   width: 370px;
   padding: 10px 15px;
   font-size: 25px;
@@ -81,13 +81,14 @@ header > .container > nav > a.active {
   border-radius: 3px;
   border: 2px solid brown;
 }
-.main .input-text:focus {
+.main input:focus {
   box-shadow: 0 0 5px cadetblue;
   border: 3px solid red !important;
 }
 .main .btn {
   display: block;
-  width: 280px;
+  width: 300px;
+  height: 75px;
   border-radius: 4px;
   border: 2px solid olivedrab;
   font-size: 35px;

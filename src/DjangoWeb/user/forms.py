@@ -9,13 +9,19 @@ class LoginForm(forms.Form):
 
 
 class RegistrationForm(forms.ModelForm):
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
+    password = forms.CharField(label='パスワード', widget=forms.PasswordInput)
     password2 = forms.CharField(
-        label='Confirm Password', widget=forms.PasswordInput)
+        label='パスワード(確認)', widget=forms.PasswordInput)
 
     class Meta:
         model = get_user_model()
-        fields = ('username', 'email')
+        fields = ('username', 'password', 'password2', 'email')
+
+    def clean_password(self):
+        password = self.cleaned_data.get('password')
+        if len(password) < 8 or len(password) > 20:
+            raise forms.ValidationError("パスワードは8桁～20桁で、ご確認ください。")
+        return password
 
     def clean_password2(self):
         cd = self.cleaned_data
@@ -25,6 +31,11 @@ class RegistrationForm(forms.ModelForm):
 
 
 class UserProfileForm(forms.ModelForm):
+    birth = forms.DateField(
+        label='生年月日', widget=forms.DateInput(attrs={'type': 'date'}))
+    phone = forms.DateField(
+        label='携帯電話番号', widget=forms.DateInput(attrs={'type': 'tel'}))
+
     class Meta:
         model = UserProfile
         fields = ('birth', 'phone',)

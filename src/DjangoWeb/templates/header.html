@@ -3,12 +3,15 @@
   <div class="container">
     <a href="#"><img src="{% static '/img/HuLogo.jpg' %}" /></a>
     <nav>
+      {% if user.is_authenticated %}
       <a href="{% url 'blog_title' %}">ブログ</a>
       <a href="#"></a>
-      <a href="#"></a>
-      {% if user.is_authenticated %}
+      <a href="{% url 'password_change' %}">PW変更</a>
       <a href="{% url 'user_logout' %}">ログアウト</a>
       {% else %}
+      <a href="#"></a>
+      <a href="#"></a>
+      <a href="{% url 'user_register' %}">新規会員</a>
       <a href="{% url 'user_login' %}">ログイン</a>
       {% endif %}
     </nav>
