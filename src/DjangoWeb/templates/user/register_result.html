@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ユーザサインアップ{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/user.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<section class="main">
+    <h1>User Register</h1>
+    <h3>サインアップは完了しました。</h3>
+    <h3><a href="{% url 'user_login' %}">ここ</a>をクリックし、ログインしてください。</h3>
+</section>
+{% endblock %}

@@ -63,9 +63,9 @@ header > .container > nav > a.active {
 
 /* main */
 .main {
-  height: 691px;
+  min-height: 666px;
   width: 1200px;
-  margin: 37px auto 0;
+  margin: 37px auto 25px;
 }
 .main h1 {
   font-size: 35px;
