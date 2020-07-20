@@ -17,13 +17,15 @@
         {% for field in form %}
         <dl>
             <dt>{{ field.label_tag }}</dt>
-            <dd><div>{{ field }}</div>{{ field.errors }}</dd>
+            <dd><div>{{ field }}</div></dd>
+            <dd><div>{{ field.errors }}</div></dd>
         </dl>
         {% endfor %}
         {% for field in profile %}
         <dl>
             <dt>{{ field.label_tag }}</dt>
-            <dd><div>{{ field }}</div>{{ field.errors }}</dd>
+            <dd><div>{{ field }}</div></dd>
+            <dd><div>{{ field.errors }}</div></dd>
         </dl>
         {% endfor %}
         <input type="submit" class="btn" value="サインアップ">

@@ -49,7 +49,10 @@ def user_register(request):
             new_profile.save()
             return HttpResponseRedirect('/user/register_result/')
         else:
-            return HttpResponse("Sorry, you can not register!")
+            cleanData = user_form.errors or userprofile_form.errors
+            # return HttpResponse("Sorry, you can not register!")
+            return render(request, 'user/register.html',  
+                {'form': user_form, 'profile': userprofile_form, 'errors': cleanData})
     else:
         user_form = RegistrationForm()
         userprofile_form = UserProfileForm()

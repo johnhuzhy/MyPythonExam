@@ -36,14 +36,41 @@
   top: 20px;
   left: 150px;
 }
-.main dl > dd {
+.main dl > dd:first-of-type {
+  display: block;
+  position: relative;
+  float: left;
+  width: 900px;
+  height: 100%;
+}
+.main dl > dd:first-of-type > div {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 460px;
+}
+.main dl > dd:last-of-type {
+  display: block;
+  position: relative;
+  float: right;
+  clear: right;
+  width: 300px;
+  height: 100%;
+}
+.main dl > dd:last-of-type > div {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+.main dl > dd:only-of-type {
   display: block;
   position: relative;
   float: right;
   width: 756px;
   height: 100%;
 }
-.main dl > dd > div {
+.main dl > dd:only-of-type > div {
   display: inline-block;
   position: absolute;
   top: 5px;
