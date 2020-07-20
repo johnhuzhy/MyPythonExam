@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}文章コラム{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/user.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<section class="main">
+    <h1>Article Column</h1>
+    <h3>文章コラムを選択してください：</h3>
+    <dl>
+        <dt><label>ID</label></dt>
+        <dd><div>コラム</div></dd>
+        <dd><div>操作</div></dd>
+    </dl>
+    <form action="." method="post">
+        {% for column in columns %}
+        <dl>
+            <dt>{{ forloop.counter }}</dt>
+            <dd><div>{{ column.column }}</div></dd>
+            <dd><div>――</div></dd>
+        </dl>
+        {% endfor %}
+    </form>
+</section>
+{% endblock %}

@@ -69,6 +69,7 @@ class PasswordChange(LoginRequiredMixin, PasswordChangeView):
     """パスワード変更ビュー"""
     success_url = reverse_lazy('password_change_done')
     template_name = 'user/password_change.html'
+    login_url = '/user/login/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -79,3 +80,4 @@ class PasswordChange(LoginRequiredMixin, PasswordChangeView):
 class PasswordChangeDone(LoginRequiredMixin, PasswordChangeDoneView):
     """パスワード変更完了"""
     template_name = 'user/password_change_done.html'
+    login_url = '/user/login/'
