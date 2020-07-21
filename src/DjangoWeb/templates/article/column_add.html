@@ -12,20 +12,9 @@
     <h1>Article Column</h1>
     <h3>文章コラムを選択してください：</h3>
     <form action="." method="post">
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>コラム</th>
-            <th>操作</th>
-        </tr>
-        {% for column in columns %}
-        <tr>
-            <td>{{ forloop.counter }}</td>
-            <td>{{ column.column }}</td>
-            <td>――</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div>
+        <p>test</p>
+    </div>
     <input type="submit" class="btn" value="コラム追加">
     </form>
 </section>

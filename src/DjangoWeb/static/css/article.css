@@ -1,0 +1,36 @@
+.main h3 {
+  font-size: 25px;
+}
+
+.main h3::before {
+  content: "";
+  margin-left: 110px;
+}
+
+.main table{
+  width: 600px;
+  height: 100px;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid brown;
+  border-collapse: collapse;
+  background: linear-gradient(0deg, rgba(255,0,0,0), rgba(255,0,0,.2),rgba(255,0,0,.5));
+}
+.main table th{
+  border: 1px solid brown;
+  padding: 10px;
+  font-size: 20px bold;
+}
+
+.main table th:first-of-type{
+  width: 25%;
+}
+.main table th:last-of-type{
+  width: 40%;
+}
+
+.main table td{
+  border: 1px solid brown;
+  padding: 10px;
+  font-size: 20px solid;
+}
