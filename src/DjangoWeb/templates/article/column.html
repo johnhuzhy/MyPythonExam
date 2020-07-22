@@ -12,7 +12,7 @@
     <h1>Article Column</h1>
     <h3>文章コラムを選択してください：</h3>
     <form action="." method="post">
-    <table>
+    <table class="table-list">
         <tr>
             <th>ID</th>
             <th>コラム</th>
@@ -26,7 +26,7 @@
         </tr>
         {% endfor %}
     </table>
-    <input type="submit" class="btn" value="コラム追加">
+    <input type="submit" class="btn" name="add" value="コラム追加">
     </form>
 </section>
 {% endblock %}

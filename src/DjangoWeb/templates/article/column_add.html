@@ -9,12 +9,16 @@
 
 {% block content %}
 <section class="main">
-    <h1>Article Column</h1>
-    <h3>文章コラムを選択してください：</h3>
+    <h1>Article Column Add</h1>
+    <h3>新しい文章コラムを入力してください：</h3>
     <form action="." method="post">
-    <div>
-        <p>test</p>
-    </div>
+    <table class="table-input">
+        <tr>
+            <td>{{ form.new_column.label_tag }}</td>
+            <td>{{ form.new_column }}</td>
+            <td>{{ form.new_column.errors }}</td>
+        </tr>
+    </table>
     <input type="submit" class="btn" value="コラム追加">
     </form>
 </section>
