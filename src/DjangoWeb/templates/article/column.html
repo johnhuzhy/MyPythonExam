@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="{% static '/css/article.css' %}"/>
 {% endblock %}
 
+{% block script %}
+<script type="text/javascript" src="{% static '/js/article.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 <section class="main">
     <h1>Article Column</h1>
@@ -22,11 +26,15 @@
         <tr>
             <td>{{ forloop.counter }}</td>
             <td>{{ column.column }}</td>
-            <td>――</td>
+            <td>
+                <button class="btn-s" name="upd" id="upd" onclick="upddelAction('{{ column.id }}')">変更</button>&nbsp;
+                <button class="btn-s" name="del" id="del" onclick="upddelAction('{{ column.id }}')">削除</button>
+            </td>
         </tr>
         {% endfor %}
     </table>
-    <input type="submit" class="btn" name="add" value="コラム追加">
+    <input type="hidden" name="column_id" value="">
+    <button class="btn" id="add" name="add" onclick="addAction()">コラム追加</button>
     </form>
 </section>
 {% endblock %}

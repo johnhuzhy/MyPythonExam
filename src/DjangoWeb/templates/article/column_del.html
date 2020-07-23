@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}文章コラム{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/article.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<section class="main">
+    <h1>Article Column Delete</h1>
+    <h3>下記のコラムは削除しますか？</h3>
+    <form action="" method="post">
+    <table class="table-input">
+        <tr>
+            <td>削除コラム:</td>
+            <td>{{ form.column }}</td>
+            <td>{{ form.column.errors }}</td>
+        </tr>
+    </table>
+    <input type="submit" class="btn" value="コラム削除">
+    </form>
+</section>
+{% endblock %}
