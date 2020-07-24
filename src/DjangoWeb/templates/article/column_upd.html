@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}文章コラム{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/article.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<section class="main">
+    <h1>Article Column Update</h1>
+    <h3>下記のコラムは更新をお願いいたします。</h3>
+    <form action="" method="post">
+    <table class="table-input">
+        <tr>
+            <td>現在のコラム:</td>
+            <td>{{ old_column.column }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>新しいコラム:</td>
+            <td>{{ new_column.new_column }}</td>
+            <td>{{ new_column.new_column.errors }}</td>
+        </tr>
+    </table>
+    <input type="submit" class="btn" value="コラム更新">
+    </form>
+</section>
+{% endblock %}
