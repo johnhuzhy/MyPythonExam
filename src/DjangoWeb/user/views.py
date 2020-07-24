@@ -20,7 +20,10 @@ def user_login(request):
                 return HttpResponseRedirect('/blog/')
                 # return HttpResponse("Welcome you, you have been authenticated sucessfully!")
             else:
-                return HttpResponse("Usrname or Password is not right!")
+                login_form = LoginForm(request.POST)
+                login_form.add_error(None,'ユーザ名、またはパスワードが違います。')
+                return render(request, 'user/login.html', {'form': login_form})
+                # return HttpResponse("Usrname or Password is not right!")
         else:
             return HttpResponse('Invalid login!')
     elif request.method == 'GET':

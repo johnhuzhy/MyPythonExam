@@ -13,6 +13,9 @@
     <h3>ユーザ名とパスワードを入力してください：</h3>
     <form action="{% url 'user_login' %}" method="post">{% csrf_token %}
         <!-- {{ form.as_p }} -->
+        {% for error in form.non_field_errors %}
+            <p class="errorlist">{{ error }}</p>
+        {% endfor %}
         <dl>
             <dt><label for="{{ form.username.id_for_label}}">ユーザ名：</label></dt>
             <dd><div>{{form.username}}</div></dd>

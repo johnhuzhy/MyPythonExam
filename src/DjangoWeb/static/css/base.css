@@ -120,6 +120,13 @@ header > .container > nav > a.active {
   background-color: olivedrab;
 }
 
+.main .errorlist {
+  font-size: 25px;
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
 /* footer */
 footer {
   background: black;

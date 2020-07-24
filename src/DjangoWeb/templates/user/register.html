@@ -13,7 +13,12 @@
     <h3>ユーザがある時は、<a href="{% url 'user_login' %}">ここ</a>をクリックしてください。</h3>
     <h3>新規ユーザは以下の情報を入力してください：</h3>
     <form action="{% url 'user_register' %}" method="post">{% csrf_token %}
-        {{ form.non_field_errors }}{{ profile.non_field_errors }}
+        {% for error in form.non_field_errors %}
+            <p class="errorlist">{{ error }}</p>
+        {% endfor %}
+        {% for error in profile.non_field_errors %}
+            <p class="errorlist">{{ error }}</p>
+        {% endfor %}
         {% for field in form %}
         <dl>
             <dt>{{ field.label_tag }}</dt>
