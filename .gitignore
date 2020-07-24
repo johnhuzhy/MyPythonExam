@@ -5,6 +5,7 @@
 /prop/*.txt
 /prop/*.xml
 /prop/*.json
+/prop/*.csv
 /log/*.log
 /src/DjangoWeb/templates/admin/
 /src/DjangoWeb/templates/registration/
