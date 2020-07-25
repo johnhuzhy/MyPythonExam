@@ -2,6 +2,7 @@
 *.jpg
 *.png
 *.tif
+*.xlsx
 /prop/*.txt
 /prop/*.xml
 /prop/*.json
