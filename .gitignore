@@ -3,6 +3,7 @@
 *.png
 *.tif
 *.xlsx
+*.pickle
 /prop/*.txt
 /prop/*.xml
 /prop/*.json
